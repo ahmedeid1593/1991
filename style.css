@@ -141,7 +141,7 @@ a {
 
 
 /* =========================================
-   MAIN CONTENT (Background Image Removed)
+   MAIN CONTENT
 ========================================= */
 
 #content {
@@ -153,7 +153,6 @@ a {
     background: var(--ink);
 }
 
-/* إلغاء صورة الخلفية والـ Overlays تماماً بناءً على طلب العميل */
 #content::before,
 #content::after {
     display: none;
@@ -316,23 +315,32 @@ a {
     background: var(--surface-2);
 }
 
+/* تنسيق أزرار الاتصال وواتساب كأيقونات تطبيقات حقيقية */
+.circle-action:nth-child(1) .circle-icon {
+    background: #007AFF;
+    color: #ffffff;
+}
+
+.circle-action:nth-child(2) .circle-icon {
+    background: #25D366;
+    color: #ffffff;
+}
+
 .circle-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    border: 1px solid var(--brass);
-    color: var(--brass);
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 19px;
-    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .circle-action:hover .circle-icon {
-    background: var(--brass);
-    color: #ffffff;
-    transform: scale(1.06);
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .circle-action span:last-child {
@@ -342,7 +350,7 @@ a {
 
 
 /* =========================================
-   SOCIAL GRID
+   SOCIAL GRID & BRAND BADGES
 ========================================= */
 
 .social-grid {
@@ -372,29 +380,56 @@ a {
     transform: translateY(-3px);
 }
 
+/* تنسيق أيقونات السوشيال ميديا كأيقونات تطبيقات حقيقية */
 .social-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--brass);
-    color: var(--brass);
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
-    transition: background 0.25s ease, color 0.25s ease;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .social-card:hover .social-icon {
-    background: var(--brass);
-    color: #ffffff;
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.social-card span:last-child {
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 0.3px;
+/* تخصيص أيقونة جوجل لتظهر بألوان جوجل الأصلية المتعددة داخل المربع الأبيض[cite: 8] */
+.social-card:nth-child(1) .social-icon { 
+    background: #ffffff; 
+    border: 1px solid #eaeaea; 
+} 
+
+.social-card:nth-child(1) .social-icon i {
+    background: linear-gradient(135deg, #EA4335 25%, #FBBC05 25% 50%, #34A853 50% 75%, #4285F4 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+/* باقي أيقونات السوشيال ميديا */
+.social-card:nth-child(2) .social-icon { 
+    background: #1877F2; 
+    color: #ffffff; 
+} /* Facebook */
+
+.social-card:nth-child(3) .social-icon { 
+    background: #000000; 
+    color: #ffffff; 
+} /* TikTok */
+
+.social-card:nth-child(4) .social-icon { 
+    background: #FFFC00; 
+    color: #000000; 
+} /* Snapchat */
+
+.social-card:nth-child(5) .social-icon { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df3475 45%, #962fbf 60%, #4f5bd5 90%); 
+    color: #ffffff; 
+} /* Instagram */
 
 
 /* =========================================
